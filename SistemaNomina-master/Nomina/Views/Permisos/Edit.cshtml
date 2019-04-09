@@ -1,0 +1,80 @@
+﻿@model Nomina.Models.Permisos
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/sketchy/bootstrap.min.css" rel="stylesheet" integrity="sha384-N8DsABZCqc1XWbg/bAlIDk7AS/yNzT5fcKzg/TwfmTuUqZhGquVmpb5VvfmLcMzp" crossorigin="anonymous">
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+@{
+    Layout = null;
+}
+
+@Html.Partial("NavBar")
+
+<div class="jumbotron" align="center">
+    <h2>Edit</h2>
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Permisos</h4>
+        <div class="btn btn-link">
+            @Html.ActionLink("Volver Atras", "Index")
+        </div>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.id)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.idEmpleado, "ID Empleado:", htmlAttributes: new { @class = "control-label col-md-2 text-primary" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.idEmpleado, ViewBag.empleados as SelectList, "Seleccione...", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.idEmpleado, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.fecha_inicio, "Fecha Inicio:", htmlAttributes: new { @class = "control-label col-md-2 text-primary" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.fecha_inicio, new { @class = "form-control", @type = "date" })
+                @Html.ValidationMessageFor(model => model.fecha_inicio, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.fecha_final, "Fecha Final:", htmlAttributes: new { @class = "control-label col-md-2 text-primary" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.fecha_final, new { @class = "form-control", @type = "date" })
+                @Html.ValidationMessageFor(model => model.fecha_final, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.comentarios, "Comentario:", htmlAttributes: new { @class = "control-label col-md-2 text-primary" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.comentarios, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.comentarios, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Guardar" class="btn btn-primary btn-block" />
+            </div>
+        </div>
+    </div>
+    }
+
+
+</div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

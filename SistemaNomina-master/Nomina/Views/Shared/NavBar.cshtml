@@ -1,0 +1,56 @@
+﻿
+@{
+    Layout = null;
+}
+
+<link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/sketchy/bootstrap.min.css" rel="stylesheet" integrity="sha384-N8DsABZCqc1XWbg/bAlIDk7AS/yNzT5fcKzg/TwfmTuUqZhGquVmpb5VvfmLcMzp" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary justify-content-center">
+
+    <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+        <button  type="button" class="btn btn-primary">Mantenimiento</button>
+        <div class="btn-group" role="group">
+            <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
+                <a class="dropdown-item" href="~/Empleados/Index">Empleados</a>
+                <a class="dropdown-item" href="~/Departamentos/Index">Departamentos</a>
+                <a class="dropdown-item" href="~/Cargos/Index">Cargos</a>
+            </div>
+        </div>
+    </div>
+
+    <a class="navbar-brand" href="~/Home/Index">Sistema Empresarial</a>
+
+    <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+        <button type="button" class="btn btn-primary">Procesos</button>
+        <div class="btn-group" role="group">
+            <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
+                <a class="dropdown-item" href="~/Empleados/totalizar">Calculo Nomina</a>
+                <a class="dropdown-item" href="~/Salidas/Index">Salida Empleados</a>
+                <a class="dropdown-item" href="~/Vacaciones/Index">Vacaciones</a>
+                <a class="dropdown-item" href="~/Permisos/Index">Permisos</a>
+                <a class="dropdown-item" href="~/Licencias/Index">Licencias</a>
+            </div>
+        </div>
+    </div>
+
+    @*<div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+            <button type="button" class="btn btn-primary">Informes</button>
+            <div class="btn-group" role="group">
+                <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
+                    <a class="dropdown-item" href="~/Empleados/Index">Nominas</a>
+                    <a class="dropdown-item" href="~/Empleados/Index">Empleados Activos e Inactivos</a>
+                    <a class="dropdown-item" href="~/Departamentos/Index">Departamentos</a>
+                    <a class="dropdown-item" href="~/Cargos/Index">Cargos</a>
+                    <a class="dropdown-item" href="~/Empleados/Index">Entrada y Salida Empleados</a>
+                    <a class="dropdown-item" href="~/Permisos/Index">Permisos</a>
+                </div>
+            </div>
+        </div>*@
+</nav>

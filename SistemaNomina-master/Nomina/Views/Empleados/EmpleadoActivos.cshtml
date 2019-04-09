@@ -1,0 +1,102 @@
+﻿@model Nomina.Models.Empleados
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/journal/bootstrap.min.css" rel="stylesheet" integrity="sha384-ciphE0NCAlD2/N6NUApXAN2dAs/vcSAOTzyE202jJx3oS8n4tAQezRgnlHqcJ59C" crossorigin="anonymous">
+
+@{
+    ViewBag.Title = "Empleados activos";
+}
+
+@{
+    Layout = null;
+}
+
+@Html.Partial("NavBar")
+
+<h2>Empleados Activos</h2>
+
+<br />
+<form asp-controller="Empleados" asp-action="EmpleadosActivos">
+    <p>
+        <input type="radio" name="rd" value="Nombre">Nombre
+        <input type="radio" name="rd" value="Departamento">Departamento<br />
+        <input type="text" name="SearchString">
+        <input type="submit" value="Filter" />
+
+    </p>
+</form>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.empleados[0].codigo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.empleados[0].nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.empleados[0].apellido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.empleados[0].telefono)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.empleados[0].departamento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.empleados[0].cargo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.empleados[0].fechaentrada)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.empleados[0].salario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.empleados[0].estado)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.empleados)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.codigo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.apellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.telefono)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.departamento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cargo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fechaentrada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.salario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.estado)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.id })
+            </td>
+        </tr>
+    }
+
+</table>
+
